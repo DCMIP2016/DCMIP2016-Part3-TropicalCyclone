@@ -1,0 +1,522 @@
+%% Copernicus Publications Manuscript Preparation Template for LaTeX Submissions
+%% ---------------------------------
+%% This template should be used for copernicus.cls
+%% The class file and some style files are bundled in the Copernicus Latex Package which can be downloaded from the different journal webpages.
+%% For further assistance please contact the Copernicus Publications at: publications@copernicus.org
+%% http://publications.copernicus.org
+
+
+%% Please use the following documentclass and Journal Abbreviations for Discussion Papers and Final Revised Papers.
+
+
+%% 2-Column Papers and Discussion Papers
+\documentclass[gmd, manuscript]{copernicus}
+
+
+
+%% Journal Abbreviations (Please use the same for Discussion Papers and Final Revised Papers)
+
+% Archives Animal Breeding (aab)
+% Atmospheric Chemistry and Physics (acp)
+% Advances in Geosciences (adgeo)
+% Advances in Statistical Climatology, Meteorology and Oceanography (ascmo)
+% Annales Geophysicae (angeo)
+% ASTRA Proceedings (ap)
+% Atmospheric Measurement Techniques (amt)
+% Advances in Radio Science (ars)
+% Advances in Science and Research (asr)
+% Biogeosciences (bg)
+% Climate of the Past (cp)
+% Drinking Water Engineering and Science (dwes)
+% Earth System Dynamics (esd)
+% Earth Surface Dynamics (esurf)
+% Earth System Science Data (essd)
+% Fossil Record (fr)
+% Geographica Helvetica (gh)
+% Geoscientific Instrumentation, Methods and Data Systems (gi)
+% Geoscientific Model Development (gmd)
+% Geothermal Energy Science (gtes)
+% Hydrology and Earth System Sciences (hess)
+% History of Geo- and Space Sciences (hgss)
+% Journal of Sensors and Sensor Systems (jsss)
+% Mechanical Sciences (ms)
+% Natural Hazards and Earth System Sciences (nhess)
+% Nonlinear Processes in Geophysics (npg)
+% Ocean Science (os)
+% Proceedings of the International Association of Hydrological Sciences (piahs)
+% Primate Biology (pb)
+% Scientific Drilling (sd)
+% SOIL (soil)
+% Solid Earth (se)
+% The Cryosphere (tc)
+% Web Ecology (we)
+% Wind Energy Science (wes)
+
+
+%% \usepackage commands included in the copernicus.cls:
+%\usepackage[german, english]{babel}
+%\usepackage{tabularx}
+%\usepackage{cancel}
+%\usepackage{multirow}
+%\usepackage{supertabular}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage{amsthm}
+%\usepackage{float}
+%\usepackage{subfig}
+%\usepackage{rotating}
+
+% Custom commands
+\newcommand{\vb}{\mathbf}
+\newcommand{\vg}{\boldsymbol}
+\newcommand{\mat}{\mathsf}
+\newcommand{\diff}[2]{\frac{d #1}{d #2}}
+\newcommand{\diffsq}[2]{\frac{d^2 #1}{{d #2}^2}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdiffsq}[2]{\frac{\partial^2 #1}{{\partial #2}^2}}
+
+
+\begin{document}
+
+\title{DCMIP2016, Part 3: Idealized Tropical Cyclone}
+
+
+% \Author[affil]{given_name}{surname}
+
+\Author[1]{Kevin A.}{Reed}
+\Author[2]{Christiane}{Jablonowski}
+\Author[3]{James}{Kent}
+\Author[4]{Peter}{Lauritzen}
+\Author[4]{Ramachandran}{Nair}
+\Author[5]{Paul A.}{Ullrich}
+\Author[4]{Colin}{Zarzycki}
+
+\Author[6]{Thomas}{Dubos}
+\Author[7]{Marco}{Giorgetta}
+\Author[8]{Elijah}{Goodfriend}
+\Author[9]{David A.}{Hall}
+\Author[10]{Lucas}{Harris}
+\Author[8]{Hans}{Johansen}
+\Author[11]{Christian}{Kuehnlein}
+\Author[12]{Vivian}{Lee}
+\Author[13]{Thomas}{Melvin}
+\Author[14]{Hiroaki}{Miura}
+\Author[15]{David}{Randall}
+\Author[16]{Alex}{Reinecke}
+\Author[4]{William}{Skamarock}
+\Author[16]{Kevin}{Viner}
+\Author[17]{Robert}{Walko}
+
+\affil[1]{Stony Brook University}
+\affil[2]{University of Michigan}
+\affil[3]{University of South Wales}
+\affil[4]{National Center for Atmospheric Research}
+\affil[5]{University of California, Davis}
+\affil[6]{Institut Pierre-Simon Laplace (IPSL)}
+\affil[7]{Max Planck Institute for Meteorology}
+\affil[8]{Lawrence Berkeley National Laboratory}
+\affil[9]{University of Colorado, Boulder}
+\affil[10]{Geophysical Fluid Dynamics Laboratory}
+\affil[11]{European Center for Medium-Range Weather Forecasting}
+\affil[12]{Environment Canada}
+\affil[13]{U.K. Met Office}
+\affil[14]{University of Tokyo}
+\affil[15]{Colorado State University}
+\affil[16]{Naval Research Laboratory}
+\affil[17]{University of Miami}
+
+%% The [] brackets identify the author with the corresponding affiliation. 1, 2, 3, etc. should be inserted.
+
+
+
+\runningtitle{DCMIP2016: Moist Baroclinic Wave}
+
+\runningauthor{Reed, et al.}
+
+\correspondence{Kevin A. Reed (kevin.a.reed@stonybrook.edu)}
+
+
+
+\received{}
+\pubdiscuss{} %% only important for two-stage journals
+\revised{}
+\accepted{}
+\published{}
+
+%% These dates will be inserted by Copernicus Publications during the typesetting process.
+
+
+\firstpage{1}
+
+\maketitle
+
+
+
+\begin{abstract}
+This paper discusses a new idealized test for atmospheric dynamical cores.
+\end{abstract}
+
+
+
+\introduction  %% \introduction[modified heading if necessary]
+
+
+The simplified tropical cyclone test case on a regular-size Earth is based on the work of \cite{reed2012idealized, reed2011analytic,reed2011impact, reed2011assessing}.  In this test an analytic vortex is initialized in a background environment which is tractable to a rapid intensification of tropical cyclones.  
+
+\begin{table}[h]
+
+\caption{List of constants used for the Ideaized Tropical Cyclone test}
+
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lll}
+\hline Constant & Value & Description \\
+\hline
+$X$ & $1$ & small-planet scaling factor (regular-size Earth)\\
+$z_t$ & $15000$ m & Tropopause height \\
+$q_0$ & $0.021$ kg/kg & Maximum specific humidity amplitude \\
+$q_t$ & $10^{-11}$ kg/kg & Specific humidity in the upper atmosphere \\
+$T_0$ & $302.15$ K & Surface temperature of the air \\
+$T_s$ & $302.15$ K & Sea surface temperature (SST), 29 C$^\circ$\\
+$z_{q1}$ & $3000$ m & Height related to the linear decrease of $q$ with height \\
+$z_{q2}$ & $8000$ m & Height related to the quadratic decrease of $q$ with height \\
+$\Gamma$ & $0.007$\ K\ m$^{-1}$ & Virtual temperature lapse rate \\
+$p_{b}$ & $1015$ hPa & Background surface pressure \\
+$\varphi_c$ & $\pi / 18$ & Initial latitude of vortex center (radians) \\
+$\lambda_c$ & $\pi$ & Initial longitude of vortex center (radians) \\
+$\Delta p$ & $11.15$ hPa & Pressure perturbation at vortex center \\
+$r_p$ & $282000$ m & Horizontal half-width of pressure perturbation \\
+$z_p$ & $7000$ m & Height related to the vertical decay rate of $p$ perturbation \\
+$\epsilon$ & $10^{-25}$ & Small threshold value \\
+\hline 
+\end{tabular*}
+
+\end{table}
+
+\subsection{Initialization}
+
+The background state consists of a prescribed specific humidity profile, virtual temperature and pressure profile.  The initial profile is defined to be in approximate gradient wind balance.  The vertical sounding is chosen to roughly match an observed tropical sounding documented in \cite{jordan1958mean}.  The background specific humidity profile $\overline{q}(z)$ as a function of height $z$ is
+
+\begin{equation}
+\begin{split}
+\overline{q}(z)&=q_0 \exp\left(- \frac{z}{z_{q1}}\right)\exp\left[-\left(\frac{z}{z_{q2}}\right)^2\right] \text{ ~~for   } 0 \leq z \leq z_t \\
+\overline{q}(z)&=q_t  \text{ ~~for   }  z_t \leq z
+\end{split}
+\end{equation}
+
+The background virtual temperature sounding $\overline{T}_v(z)$ is split into two different representations for the lower and upper atmosphere.  It is given by
+\begin{equation}
+\begin{array}{ll} \label{eq:tc_virtualtemperaturebg}
+%\phantom{T_{vt} = }\overline{T}_v(z) = T_{v0} - \Gamma z & \mbox{for} \; 0 \le z \le z_t, \\
+\overline{T}_v(z) = T_{v0} - \Gamma z & \mbox{for} \; 0 \le z \le z_t, \\
+\overline{T}_v(z) = T_{vt} = T_{v0} - \Gamma z_t & \mbox{for} \; z_t < z, 
+\end{array}
+\end{equation} with the virtual temperature at the surface $T_{v0}$ = $T_0 (1+0.608 \, q_0)$ and the virtual temperature at the tropopause level $T_{vt}$ = $T_{v0} - \Gamma z_t$.  The background temperature profile can be obtained from (\ref{eq:virtualtemperature}).
+
+The background vertical pressure profile $\overline{p}(z)$ of the moist air is computed using the hydrostatic balance and (\ref{eq:tc_virtualtemperaturebg}). The profile is given by:
+\begin{equation}
+\begin{array}{ll}\label{eq4}
+\displaystyle \overline{p}(z) = p_b \left( \frac{T_{v0} - \Gamma z}{T_{v0}} \right )^{g / R_d \Gamma} & \mbox{for} \; 0 \le z \le z_t, \\
+\displaystyle \overline{p}(z) = p_t \, \exp{\left(\frac{g (z_t - z)}{R_d T_{vt}} \right)} & \mbox{for} \; z_t < z.
+\end{array}
+\end{equation}  The pressure at the tropopause level $z_t$ is continuous and given by 
+\begin{equation}\label{eq4.5}
+p_t = p_b \left( \frac{T_{vt}}{T_{v0}} \right )^{\frac{g}{R_d \Gamma}},
+\end{equation}
+which, for the given set of parameters, is approximately 130.5 hPa. 
+
+\subsubsection{Axisymmetric Vortex}
+
+The pressure equation $p(r,z)$ for the moist air is comprised of the background pressure profile (\ref{eq4}) plus a 2D pressure perturbation $p'(r,z)$,
+\begin{equation} \label{eq5}
+p(r,z) = \overline{p}(z) + p^\prime(r,z),
+\end{equation} where $r$ symbolizes the radial distance (or radius) to the center of the prescribed vortex.  On the sphere $r$ is defined using the great circle distance
+\begin{equation}
+r = a \arccos{ \left ( \sin{\varphi_c} \, \sin{\varphi} + \cos{\varphi_c} \, \cos{\varphi} \, \cos{(\lambda - \lambda_c)} \right )}.
+\end{equation}  The perturbation pressure is defined as
+\begin{align} \label{test5:p_pert}
+p^\prime(r,z) & = -\Delta p \, \exp\left[{-\left (\frac{r}{r_p} \right ) ^{3/2}} {-\left (\frac{z}{z_p} \right ) ^{2}}\right] \left ( \frac{T_{v0} - \Gamma z}{T_{v0}} \right )^{\frac{g}{R_d \Gamma}} & & \mbox{for $\; 0 \le z \le z_t$},  \nonumber \\
+p^\prime(r,z) & = 0 & & \mbox{for} \; z_t < z.
+\end{align}  The pressure perturbation depends on the pressure difference $\Delta p$ between the background surface pressure $p_b$ and the pressure at the center of the initial vortex, the pressure change in the radial direction $r_p$ and the pressure decay with height within the vortex $z_p$.  The moist surface pressure $p_s(r)$ is computed by setting $z = 0$ m in (\ref{eq5}), which gives
+\begin{equation}
+\label{eq:ps}
+p_s(r) = p_b - \Delta p \, \exp\left[{-\left (\frac{r}{r_p} \right ) ^{3/2}}\right].
+\end{equation}
+
+The axisymmetric virtual temperature $T_v(r,z)$ is computed using the hydrostatic equation and ideal gas law
+\begin{equation}
+T_v(r,z) = -\frac{g p(r,z)}{R_d} \left( \frac{\partial p(r,z)}{ \partial z} \right)^{-1}.
+\end{equation}  Again it can be written as a sum of the background state and a perturbation,
+\begin{equation} \label{eq:virt_temp}
+T_v(r,z) = \overline{T}_v(z) + T_v^\prime(r,z),
+\end{equation} where the virtual temperature perturbation is defined as
+\begin{align}
+\label{eq:Tv}
+T_v^\prime(r,z) &= (T_{v0} - \Gamma z ) \left\{ \left [1+ \frac{2R_d(T_{v0} - \Gamma z)z}{gz_p^2 \left[ 1 - \frac{p_b}{\Delta p}\exp\left({\left (\frac{r}{r_p} \right ) ^{3/2}} + {\left (\frac{z}{z_p} \right ) ^{2}} \right) \right] }\right]^{-1} - 1 \right\} & & \mbox{for} \; 0 \le z \le z_t, \nonumber \\
+T_v^\prime(r,z) &= 0 & & \mbox{for} \; z_t < z.
+\end{align} 
+
+The axisymmetric specific humidity $q(r,z)$ is set to the background profile everywhere
+\begin{eqnarray}
+\label{eq:q}
+q(r,z) = \overline{q}(z).
+\end{eqnarray}  Consequently, the temperature can be written as
+\begin{equation} \label{test5:T_eqn}
+T(r,z) = \overline{T}(z) + T^\prime(r,z),
+\end{equation} with the temperature perturbation
+\begin{align} \label{eq:temperature}
+T^\prime(r,z) &= \frac{T_{v0} - \Gamma z}{1+0.608\overline{q}(z)} \left\{ \left [1+ \frac{2R_d(T_{v0} - \Gamma z)z}{gz_p^2 \left[ 1 - \frac{p_b}{\Delta p}\exp\left({\left (\frac{r}{r_p} \right ) ^{3/2}} + {\left (\frac{z}{z_p} \right ) ^{2}} \right) \right] }\right]^{-1} - 1 \right\} & & \mbox{for} \; 0 \le z \le z_t, \nonumber \\
+T^\prime(r,z) &= 0 & & \mbox{for} \; z_t < z. 
+\end{align}  
+Due to the small specific humidity value in the upper atmosphere (10$^{-11}$ kg/kg for $z > z_t$) the virtual temperature equals the temperature to a very good approximation in this region. The formulation presented here is equivalent to the one presented in \cite{reed2012idealized}.
+
+If the density of the moist air needs to be initialized its formulation is based on the ideal gas law
+\begin{equation} \label{eq:density}
+\rho(r,z) = \frac{p(r,z)}{R_d T_v(r,z)}
+\end{equation} 
+which utilizes the moist pressure (\ref{eq5}) and virtual temperature (\ref{eq:virt_temp}). The surface elevation $z_s$ and thereby the surface geopotential $\Phi_s=g z_s$ are set to zero.
+ 
+Finally, the tangential velocity field $v_T(r,z)$ of the axisymmetric vortex is defined by utilizing the gradient-wind balance, which depends on the pressure (\ref{eq5}) and the virtual temperature (\ref{eq:Tv}). The tangential velocity is given by
+\begin{eqnarray}
+\label{eq:gradient-wind}
+v_T(r,z) = -\frac{f_cr}{2}+\sqrt{ \frac{f_c^2r^2}{4}+\frac{R_d \, T_v(r,z) \, r}{p(r,z)} \frac{\partial p(r,z)}{\partial r}},
+\end{eqnarray}
+where $f_c = 2 \Omega \sin(\varphi_c)$ is the Coriolis parameter at the constant latitude $\varphi_c$. Substituting $T_v(r,z)$ and $p(r,z)$ into ({\ref{eq:gradient-wind}) gives
+\begin{align}
+\label{eq:gradient-wind-expr}
+v_T(r,z) & = -\frac{f_cr}{2}+\sqrt{ \frac{f_c^2r^2}{4}-\frac{\frac{3}{2} \left( \frac{r}{r_p}\right)^{3/2} (T_{v0}-\Gamma z) R_d}{1+\frac{2R_d(T_{v0}-\Gamma z)z}{g z_p^2}-\frac{p_b}{\Delta p}\exp\left({\left (\frac{r}{r_p} \right ) ^{3/2}} + {\left (\frac{z}{z_p} \right ) ^{2}} \right)}} & & \mbox{for} \; 0 \le z \le z_t, \nonumber \\
+v_T(r,z) & = 0 & & \mbox{for} \; z_t < z.
+\end{align}  The last step is to split the tangential velocity (\ref{eq:gradient-wind-expr}) into its zonal and meridional wind components $u(\lambda,\varphi,z)$ and $v(\lambda,\varphi,z)$. Similar to \cite{nair2008moving} these are computed using the following expressions,
+\begin{eqnarray}
+d_1 &=& \sin\varphi_c \, \cos\varphi - \cos\varphi_c \, \sin\varphi \, \cos(\lambda-\lambda_c) \\
+d_2 &=& \cos\varphi_c \, \sin(\lambda-\lambda_c) \\
+d &=& \max \big({\epsilon,\sqrt{ {d_1}^2 + {d_2}^2} } \big),
+\end{eqnarray}
+which are utilized in the projections
+\begin{eqnarray}
+\label{eqn:u_wind}
+u(\lambda,\varphi,z) &=& \frac{v_T(\lambda,\varphi,z) \, d_1}{d}\\ \label{eqn:v_wind}
+v(\lambda,\varphi,z) &=& \frac{v_T(\lambda,\varphi,z) \, d_2}{d} \,.
+\end{eqnarray}
+A small $\epsilon = 10^{-25}$ value avoids divisions by zero.  The vertical velocity is set to zero.
+
+\ \\
+\noindent \begin{tabular}{|p{\textwidth}|}
+\hline \textbf{Note:} We are currently investigating a test case specification that places the idealized tropical cyclone on an $f$-plane.  This configuration would remove issues associated with $\beta$ drift of the cyclone and allow for a more direct intercomparison of the simulated storm. \\
+\hline
+\end{tabular}
+
+\begin{figure}[tb]
+\center\includegraphics[width=\linewidth]{plot_tropicalcyclone_init.pdf}
+  \caption{Initial state for the tropical cyclone test.}\label{fig:tropicalcyclone_init}
+\end{figure} 
+
+\subsection{Grid spacings, simulation time, output and diagnostics}
+
+\begin{itemize}
+\item Moist simulations should be performed at 0.5$^\circ$ resolution with 30 vertical levels for 10 days.
+\item Plots of minimum surface pressure over the duration of the simulation.
+\item Experiments could address the coupling frequency between the dynamics and physics.
+\item A variable resolution simulation should be performed that (a) studies the effect of the tropical cyclone transitioning from fine resolution to coarse resolution and (b) high resolution simulations down to 0.125$^\circ$ over the tropical cyclone.
+\end{itemize}
+
+
+\conclusions  %% \conclusions[modified heading if necessary]
+TEXT
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Alternative Planetary Boundary Layer for Tropical Cyclone Test} \label{sec:BryanBoundaryLayer}
+
+An alternative approach for boundary layer mixing has been proposed using a K-profile parameterization formulation for the tropical cyclone test described in Section~\ref{sec:tropical_cyclone}.  The implementation only impacts the manner in which the eddy diffusivity coefficients are calculated. In particular the calculation of $K_m$ in (\ref{Kmtaper}) is replaced with
+\begin{equation} \label{Kmtaper_alt}
+\begin{array}{ll}
+K_m = \kappa u^* z \left ( 1 -  \frac{z}{h} \right )^2 & \mbox{for} \; z \leq h \\
+K_m = 0 & \mbox{for} \; z > h,
+\end{array}
+\end{equation}
+where $\kappa = 0.4$, $u^* = \sqrt{C_d} \vert \vec{v}_{a} \vert$ and $h = 1$ km. $K_E$ in (\ref{KEtaper}) is then defined as
+\begin{equation}
+\begin{array}{ll}\label{KEtaper_alt}
+K_E = \kappa e^* z \left ( 1 -  \frac{z}{h} \right )^2 & \mbox{for} \; z \leq h \\
+K_E = 0 & \mbox{for} \; z > h,
+\end{array}
+\end{equation}
+where $e^* = \sqrt{C_E} \vert \vec{v}_{a} \vert$. This implementation will be used in supplemental simulations of the tropical cyclone test.
+
+%\subsection{}                               %% Appendix A1, A2, etc.
+
+
+\authorcontribution{TEXT}
+
+\begin{acknowledgements}
+{\color{blue}[Include a complete list of DCMIP2016 student participants here along with sponsors]}
+\end{acknowledgements}
+
+
+%% REFERENCES
+
+%% Since the Copernicus LaTeX package includes the BibTeX style file copernicus.bst,
+%% authors experienced with BibTeX only have to include the following two lines:
+%%
+\bibliographystyle{copernicus}
+\bibliography{DCMIP2016-Part3}
+%%
+%% URLs and DOIs can be entered in your BibTeX file as:
+%%
+%% URL = {http://www.xyz.org/~jones/idx_g.htm}
+%% DOI = {10.5194/xyz}
+
+
+%% LITERATURE CITATIONS
+%%
+%% command                        & example result
+%% \citet{jones90}|               & Jones et al. (1990)
+%% \citep{jones90}|               & (Jones et al., 1990)
+%% \citep{jones90,jones93}|       & (Jones et al., 1990, 1993)
+%% \citep[p.~32]{jones90}|        & (Jones et al., 1990, p.~32)
+%% \citep[e.g.,][]{jones90}|      & (e.g., Jones et al., 1990)
+%% \citep[e.g.,][p.~32]{jones90}| & (e.g., Jones et al., 1990, p.~32)
+%% \citeauthor{jones90}|          & Jones et al.
+%% \citeyear{jones90}|            & 1990
+
+
+
+%% FIGURES
+
+%% ONE-COLUMN FIGURES
+
+%%f
+%\begin{figure}[t]
+%\includegraphics[width=8.3cm]{FILE NAME}
+%\caption{TEXT}
+%\end{figure}
+%
+%%% TWO-COLUMN FIGURES
+%
+%%f
+%\begin{figure*}[t]
+%\includegraphics[width=12cm]{FILE NAME}
+%\caption{TEXT}
+%\end{figure*}
+%
+%
+%%% TABLES
+%%%
+%%% The different columns must be seperated with a & command and should
+%%% end with \\ to identify the column brake.
+%
+%%% ONE-COLUMN TABLE
+%
+%%t
+%\begin{table}[t]
+%\caption{TEXT}
+%\begin{tabular}{column = lcr}
+%\tophline
+%
+%\middlehline
+%
+%\bottomhline
+%\end{tabular}
+%\belowtable{} % Table Footnotes
+%\end{table}
+%
+%%% TWO-COLUMN TABLE
+%
+%%t
+%\begin{table*}[t]
+%\caption{TEXT}
+%\begin{tabular}{column = lcr}
+%\tophline
+%
+%\middlehline
+%
+%\bottomhline
+%\end{tabular}
+%\belowtable{} % Table Footnotes
+%\end{table*}
+%
+%
+%%% NUMBERING OF FIGURES AND TABLES
+%%%
+%%% If figures and tables must be numbered 1a, 1b, etc. the following command
+%%% should be inserted before the begin{} command.
+%
+%\addtocounter{figure}{-1}\renewcommand{\thefigure}{\arabic{figure}a}
+%
+%
+%%% MATHEMATICAL EXPRESSIONS
+%
+%%% All papers typeset by Copernicus Publications follow the math typesetting regulations
+%%% given by the IUPAC Green Book (IUPAC: Quantities, Units and Symbols in Physical Chemistry,
+%%% 2nd Edn., Blackwell Science, available at: http://old.iupac.org/publications/books/gbook/green_book_2ed.pdf, 1993).
+%%%
+%%% Physical quantities/variables are typeset in italic font (t for time, T for Temperature)
+%%% Indices which are not defined are typeset in italic font (x, y, z, a, b, c)
+%%% Items/objects which are defined are typeset in roman font (Car A, Car B)
+%%% Descriptions/specifications which are defined by itself are typeset in roman font (abs, rel, ref, tot, net, ice)
+%%% Abbreviations from 2 letters are typeset in roman font (RH, LAI)
+%%% Vectors are identified in bold italic font using \vec{x}
+%%% Matrices are identified in bold roman font
+%%% Multiplication signs are typeset using the LaTeX commands \times (for vector products, grids, and exponential notations) or \cdot
+%%% The character * should not be applied as mutliplication sign
+%
+%
+%%% EQUATIONS
+%
+%%% Single-row equation
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%%% Multiline equation
+%
+%\begin{align}
+%& 3 + 5 = 8\\
+%& 3 + 5 = 8\\
+%& 3 + 5 = 8
+%\end{align}
+%
+%
+%%% MATRICES
+%
+%\begin{matrix}
+%x & y & z\\
+%x & y & z\\
+%x & y & z\\
+%\end{matrix}
+%
+%
+%%% ALGORITHM
+%
+%\begin{algorithm}
+%\caption{…}
+%\label{a1}
+%\begin{algorithmic}
+%…
+%\end{algorithmic}
+%\end{algorithm}
+%
+%
+%%% CHEMICAL FORMULAS AND REACTIONS
+%
+%%% For formulas embedded in the text, please use \chem{}
+%
+%%% The reaction environment creates labels including the letter R, i.e. (R1), (R2), etc.
+%
+%\begin{reaction}
+%%% \rightarrow should be used for normal (one-way) chemical reactions
+%%% \rightleftharpoons should be used for equilibria
+%%% \leftrightarrow should be used for resonance structures
+%\end{reaction}
+%
+%
+%%% PHYSICAL UNITS
+%%%
+%%% Please use \unit{} and apply the exponential notation
+
+
+\end{document}
