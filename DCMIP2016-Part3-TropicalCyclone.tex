@@ -91,69 +91,66 @@
 \Author[5]{Paul A.}{Ullrich}
 \Author[4]{Colin M.}{Zarzycki}
 
-\Author[6]{David A.}{Hall}
+\Author[6]{David M.}{Hall}
 
-\Author[7]{Alex}{Reinecke}
-\Author[7]{Kevin}{Viner}
+\Author[7]{Don}{Dazlich}
+\Author[7]{Ross}{Heikes}
+\Author[7]{Celal}{Konor}
+\Author[7]{David}{Randall}
 
-\Author[8]{Don}{Dazlich}
-\Author[8]{Ross}{Heikes}
-\Author[8]{Celal}{Konor}
-\Author[8]{David}{Randall}
+\Author[8]{Thomas}{Dubos}
+\Author[8]{Yann}{Meurdesoif}
 
 \Author[9]{Xi}{Chen}
 \Author[9]{Lucas}{Harris}
 
-\Author[10]{Marco}{Giorgetta}
-\Author[11]{Daniel}{Reinert}
+\Author[10]{Christian}{K\"uhnlein}
 
-\Author[12]{Christian}{Kuehnlein}
+\Author[11]{Vivian}{Lee}
+\Author[11]{Abdessamad}{Qaddouri}
+\Author[11]{Claude}{Girard}
 
-\Author[13]{Robert}{Walko}
-
-\Author[14]{Vivian}{Lee}
-\Author[14]{Abdessamad}{Qaddouri}
-\Author[14]{Monique}{Tanguay}
-    
-\Author[15]{Hiroaki}{Miura}
-\Author[15]{Tomoki}{Ohno}
-\Author[16]{Ryuji}{Yoshida}
+\Author[12]{Marco}{Giorgetta}
+\Author[13]{Daniel}{Reinert}
 
 \Author[4]{Joseph}{Klemp}
 \Author[4]{Sang-Hun}{Park}
 \Author[4]{William}{Skamarock}
 
-\Author[17]{Thomas}{Dubos}
-\Author[17]{Yann}{Meurdesoif}
+\Author[14]{Hiroaki}{Miura}
+\Author[14]{Tomoki}{Ohno}
+\Author[15]{Ryuji}{Yoshida}
 
-\Author[18]{Elijah}{Goodfriend}
-\Author[18]{Hans}{Johansen}
+\Author[16]{Robert}{Walko}
+
+\Author[17]{Alex}{Reinecke}
+\Author[17]{Kevin}{Viner}
 
 \affil[1]{Stony Brook University}
 \affil[2]{University of Michigan}
 \affil[3]{University of South Wales}
 \affil[4]{National Center for Atmospheric Research}
 \affil[5]{University of California, Davis}
+
 \affil[6]{University of Colorado, Boulder}
-\affil[7]{Naval Research Laboratory}
-\affil[8]{Colorado State University}
-\affil[9]{Geophysical Fluid Dynamics Laboratory}
-\affil[10]{Max Planck Institute for Meteorology}
-\affil[11]{Deutscher Wetterdienst (DWD)}
-\affil[12]{European Center for Medium-Range Weather Forecasting}
-\affil[13]{University of Miami}
-\affil[14]{Environment Canada}
-\affil[15]{University of Tokyo}
-\affil[16]{RIKEN}
-\affil[17]{Institut Pierre-Simon Laplace (IPSL)}
-\affil[18]{Lawrence Berkeley National Laboratory}
+\affil[7]{Colorado State University}
+\affil[8]{Institut Pierre-Simon Laplace (IPSL)}
+\affil[9]{Geophysical Fluid Dynamics Laboratory (GFDL)}
+\affil[10]{European Centre for Medium-Range Weather Forecasts (ECMWF)}
+\affil[11]{Environment and Climate Change Canada}
+\affil[12]{Max Planck Institute for Meteorology}
+\affil[13]{Deutscher Wetterdienst (DWD)}
+\affil[14]{University of Tokyo}
+\affil[15]{RIKEN}
+\affil[16]{University of Miami}
+\affil[17]{Naval Research Laboratory}
 
 
 %% The [] brackets identify the author with the corresponding affiliation. 1, 2, 3, etc. should be inserted.
 
 
 
-\runningtitle{DCMIP2016: Moist Baroclinic Wave}
+\runningtitle{DCMIP2016: Tropical Cyclone}
 
 \runningauthor{Reed, et al.}
 
@@ -177,7 +174,7 @@
 
 
 \begin{abstract}
-This paper discusses a new idealized test for atmospheric dynamical cores.
+The 2016 Dynamical Core Model Intercomparison Project (DCMIP-2016) held at the National Center for Atmospheric Research (NCAR) in June 2016 utilized test cases of intermediate complexity to compare and explore advances in non-hydrostatic global models.  In particular, DCMIP-2016 paired 12 different dynamical cores with a simplified physical parameterization package to shed light on the physics-dynamics interactions in a controlled test environment. The paper presents the results of an idealized tropical cyclone test case, which is the second of the three DCMIP-2016 tests. It is based on an analytically-prescribed vortex in a quiescent background environment that fosters a rapid intensification of the initial tropical cyclone seed. The cyclone intensifies from a weak, balanced vortex to a tropical cyclone over a 10-day period. Moisture and physics-dynamics coupling features prominently in this test, as well as the impact of precipitation and boundary layer parameterization formulations. Variable-resolution setups can be used to model the tropical cyclone at fine grid spacings and assess the impacts of the resolution transition regions on the behavior of the storm. The DCMIP-2016 models are compared at a default horizontal grid spacing of approximately 50 km, and effects of higher horizontal resolutions are explored. The paper demonstrates how idealized test cases are part of a model hierarchy that helps distinguish between causes and effects in atmospheric models.
 \end{abstract}
 
 
@@ -376,7 +373,7 @@ where $e^* = \sqrt{C_E} \vert \vec{v}_{a} \vert$. This implementation will be us
 \authorcontribution{TEXT}
 
 \begin{acknowledgements}
-DCMIP2016 is sponsored by the National Center for Atmospheric Research Computational Information Systems Laboratory, the Department of Energy Office of Science (award no. DE-SC0016015), the National Science Foundation (award no. 1629819), the National Aeronautics and Space Administration (award no. {\color{red}??}), the National Oceanic and Atmospheric Administration (award no. {\color{red}??}), the Office of Naval Research and CU Boulder Research Computing.  This work was made possible with support from our student and postdoctoral participants: Sabina Abba Omar, Scott Bachman, Amanda Back, Tobias Bauer, Vinicius Capistrano, Spencer Clark, Ross Dixon, Christopher Eldred, Robert Fajber, Jared Ferguson, Emily Foshee, Ariane Frassoni, Alexander Goldstein, Jorge Guerra, Chasity Henson, Adam Herrington, Tsung-Lin Hsieh, Dave Lee, Theodore Letcher, Weiwei Li, Laura Mazzaro, Maximo Menchaca, Jonathan Meyer, Farshid Nazari, John O'Brien, Bjarke Tobias Olsen, Hossein Parishani, Charles Pelletier, Thomas Rackow, Kabir Rasouli, Cameron Rencurrel, Koichi Sakaguchi, G\"okhan Sever, James Shaw, Konrad Simon, Abhishekh Srivastava, Nicholas Szapiro, Kazushi Takemura, Pushp Raj Tiwari, Chii-Yun Tsai, Richard Urata, Karin van der Wiel, Lei Wang, Eric Wolf, Zheng Wu, Haiyang Yu, Sungduk Yu and Jiawei Zhuang.  We would also like to thank Rich Loft, Cecilia Banner, Kathryn Peczkowicz and Rory Kelly (NCAR), Carmen Ho, Perla Dinger, and Gina Skyberg (UC Davis) and Kristi Hansen (University of Michigan) for administrative support during the workshop and summer school.  
+DCMIP2016 is sponsored by the National Center for Atmospheric Research Computational Information Systems Laboratory, the Department of Energy Office of Science (award no. DE-SC0016015), the National Science Foundation (award no. 1629819), the National Aeronautics and Space Administration (award no. NNX16AK51G), the National Oceanic and Atmospheric Administration Great Lakes Environmental Research Laboratory (award no. NA12OAR4320071), the Office of Naval Research and CU Boulder Research Computing.  This work was made possible with support from our student and postdoctoral participants: Sabina Abba Omar, Scott Bachman, Amanda Back, Tobias Bauer, Vinicius Capistrano, Spencer Clark, Ross Dixon, Christopher Eldred, Robert Fajber, Jared Ferguson, Emily Foshee, Ariane Frassoni, Alexander Goldstein, Jorge Guerra, Chasity Henson, Adam Herrington, Tsung-Lin Hsieh, Dave Lee, Theodore Letcher, Weiwei Li, Laura Mazzaro, Maximo Menchaca, Jonathan Meyer, Farshid Nazari, John O'Brien, Bjarke Tobias Olsen, Hossein Parishani, Charles Pelletier, Thomas Rackow, Kabir Rasouli, Cameron Rencurrel, Koichi Sakaguchi, G\"okhan Sever, James Shaw, Konrad Simon, Abhishekh Srivastava, Nicholas Szapiro, Kazushi Takemura, Pushp Raj Tiwari, Chii-Yun Tsai, Richard Urata, Karin van der Wiel, Lei Wang, Eric Wolf, Zheng Wu, Haiyang Yu, Sungduk Yu and Jiawei Zhuang.  We would also like to thank Rich Loft, Cecilia Banner, Kathryn Peczkowicz and Rory Kelly (NCAR), Perla Dinger, Carmen Ho, and Gina Skyberg (UC Davis) and Kristi Hansen (University of Michigan) for administrative support during the workshop and summer school. 
 \end{acknowledgements}
 
 

@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: DCMIP2016-Part3-TropicalCyclone.aux
+The style file: copernicus.bst
+Database file #1: DCMIP2016-Part3.bib
+You've used 6 entries,
+            2811 wiz_defined-function locations,
+            1027 strings with 9566 characters,
+and the built_in function-call counts, 6786 in all, are:
+= -- 897
+> -- 115
+< -- 6
++ -- 79
+- -- 33
+* -- 340
+:= -- 561
+add.period$ -- 6
+call.type$ -- 6
+change.case$ -- 23
+chr.to.int$ -- 4
+cite$ -- 18
+duplicate$ -- 766
+empty$ -- 339
+format.name$ -- 59
+if$ -- 1353
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 53
+newline$ -- 27
+num.names$ -- 24
+pop$ -- 230
+preamble$ -- 1
+purify$ -- 23
+quote$ -- 0
+skip$ -- 539
+stack$ -- 0
+substring$ -- 399
+swap$ -- 718
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 54
+warning$ -- 0
+while$ -- 33
+width$ -- 0
+write$ -- 76

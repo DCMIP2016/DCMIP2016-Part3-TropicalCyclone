@@ -1,0 +1,39 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{\tt #1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Jordan(1958)}]{jordan1958mean}
+Jordan, C.~L.: Mean soundings for the West Indies area, Journal of Meteorology,
+  15, 91--97, 1958.
+
+\bibitem[{Nair and Jablonowski(2008)}]{nair2008moving}
+Nair, R.~D. and Jablonowski, C.: Moving vortices on the sphere: A test case for
+  horizontal advection problems, Monthly Weather Review, 136, 699--711, 2008.
+
+\bibitem[{Reed and Jablonowski(2011{\natexlab{a}})}]{reed2011analytic}
+Reed, K.~A. and Jablonowski, C.: {An analytic vortex initialization technique
+  for idealized tropical cyclone studies in {AGCMs}}, Mon. Wea. Rev., 139,
+  689--710, 2011{\natexlab{a}}.
+
+\bibitem[{Reed and Jablonowski(2011{\natexlab{b}})}]{reed2011assessing}
+Reed, K.~A. and Jablonowski, C.: {Assessing the Uncertainty of Tropical Cyclone
+  Simulations in {NCAR's Community Atmosphere Model}}, J. Adv. Model. Earth
+  Syst., 3, Art. 2011MS000\,076, 16 pp., 2011{\natexlab{b}}.
+
+\bibitem[{Reed and Jablonowski(2011{\natexlab{c}})}]{reed2011impact}
+Reed, K.~A. and Jablonowski, C.: {Impact of physical parameterizations on
+  idealized tropical cyclones in the {C}ommunity {A}tmosphere {M}odel},
+  Geophys. Res. Lett., 38, L04\,805, \doi{10.1029/2010GL046297},
+  2011{\natexlab{c}}.
+
+\bibitem[{Reed and Jablonowski(2012)}]{reed2012idealized}
+Reed, K.~A. and Jablonowski, C.: {Idealized tropical cyclone simulations of
+  intermediate complexity: a test case for {AGCMs}}, J. Adv. Model. Earth
+  Syst., 4, M04\,001, \doi{10.1029/2011MS000099}, 2012.
+
+\end{thebibliography}
